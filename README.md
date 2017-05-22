@@ -205,18 +205,16 @@ velocity_time_graphs( **kwargs )
 ![png](Nonlinear%20Oscillators_files/Nonlinear%20Oscillators_10_1.png)
 
 
-# Coupling Nonlinear Oscillators
+# Coupling Oscillators
 
 Here we will create a system of equations to update the internal states of multiple oscillators, whereby each affect each other. For each oscillator $i$, we define the dynamical equations,
 
 \begin{align}
     \tau \dot{v_i} =& -\alpha \frac{x_i^2 + v_i^2 - E_i}{E_i} v_i - x_i \\
-    &+ \underbrace{\sum_{j\neq i}(a_{ij}x_j + b_{ij}v_j)}_{\text{Influence of other oscillators}} 
+    &+ \underbrace{\sum_{j\neq i}(a_{ij}x_j + b_{ij}v_j)}_{\text{Influence of oscillators on one another}} 
      + \underbrace{\sum_j(c_{ij} s_j)}_{\text{Influence from external factors}} \\
     \tau \dot{x_i} =& v_i
 \end{align}
-
-where $a_{ij}$ and $b_{ij}$ are constants (positive or negative) determining how oscillator $j$ influences oscillator $i$.
 
 
 ```python
